@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<controls:FlyoutPage xmlns:controls="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Vorlesung_09.Pages.GUI.FlyoutPage"
+             Title="Flyout Page">
+
+    <controls:FlyoutPage.Flyout>
+        <controls:ContentPage Title="Menu">
+            <controls:Label Text="Menu" />
+        </controls:ContentPage>
+    </controls:FlyoutPage.Flyout>
+
+    <controls:FlyoutPage.Detail>
+        <controls:NavigationPage>
+            <x:Arguments>
+                <controls:ContentPage Title="Inhalt">
+                    <controls:Label Text="Inhalt" />
+                </controls:ContentPage>
+            </x:Arguments>
+        </controls:NavigationPage>
+    </controls:FlyoutPage.Detail>
+
+</controls:FlyoutPage>

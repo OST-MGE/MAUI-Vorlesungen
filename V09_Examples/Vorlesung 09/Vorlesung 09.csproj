@@ -48,22 +48,33 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Resources\Images\" />
+	  <None Remove="Resources\Images\icon_cat.svg" />
+	  <None Remove="Resources\Images\icon_dragon.svg" />
+	  <None Remove="Resources\Images\icon_gamepad.svg" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Folder Include="Resources\Raw\" />
 	  <Folder Include="Resources\Styles\" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\XAML\XamlFeatures.xaml.cs">
-	    <DependentUpon>XamlFeatures.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
+	  <MauiXaml Update="Pages\GUI\ControlsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\GUI\FlyoutPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\GUI\LayoutsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\XAML\XamlFeatures.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\XAML\XamlVersusCSharp.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\GUI\TabbedPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

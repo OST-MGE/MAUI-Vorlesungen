@@ -9,6 +9,13 @@
         <VerticalStackLayout Spacing="5">
             <Button Text="XAML vs. C#" Clicked="XamlVersusCSharp_OnClicked" />
             <Button Text="XAML Features" Clicked="XamlFeatures_OnClicked" />
+
+            <Button Text="Fenster öffnen" Clicked="OpenWindow_OnClicked" Margin="0, 20, 0, 0" />
+
+            <Button Text="TabbedPage" Clicked="TabbedPage_OnClicked" Margin="0, 20, 0, 0" />
+            <Button Text="FlyoutPage" Clicked="FlyoutPage_OnClicked" />
+            <Button Text="Layouts" Clicked="Layouts_OnClicked" />
+            <Button Text="Controls" Clicked="Controls_OnClicked" />
         </VerticalStackLayout>
     </ScrollView>
 
