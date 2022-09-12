@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:s="clr-namespace:System;assembly=System.Runtime"
+             xmlns:local="clr-namespace:Vorlesung_10.Pages.Resources"
+             x:Class="Vorlesung_10.Pages.Resources.ResourcesPage"
+             Title="Resources">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="OSTBrush" Color="#6E1C50" />
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MyDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <s:Double x:Key="Spacing">5</s:Double>
+            <s:Double x:Key="VerticalMargin">2</s:Double>
+            <s:Double x:Key="HorizontalMargin">5</s:Double>
+
+            <Thickness x:Key="MyMargin" 
+                       Top="{StaticResource VerticalMargin}"
+                       Bottom="{StaticResource VerticalMargin}"
+                       Left="{StaticResource HorizontalMargin}"
+                       Right="{StaticResource HorizontalMargin}" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Spacing="{StaticResource Spacing}" 
+                         Margin="{StaticResource MyMargin}">
+
+        <Label Text="Statisch, Lokal, Property Element Syntax" TextColor="White">
+            <Label.Background>
+                <StaticResource Key="OSTBrush" />
+            </Label.Background>
+        </Label>
+
+        <Label Text="Statisch, Lokal, Attribute Syntax mit Key"
+               TextColor="White"
+               Background="{StaticResource Key=OSTBrush}" />
+
+        <Label Text="Statisch, Lokal, Attribute Syntax ohne Key"
+               TextColor="White"
+               Background="{StaticResource OSTBrush}" />
+
+        <Label Text="Dynamisch, Lokal"
+               TextColor="White"
+               Background="{DynamicResource OSTBrush}" />
+
+        <Label Text="Statisch, Eigenständiges Resource Dictionary"
+               TextColor="White"
+               Background="{StaticResource Key=OSTBrush2}" />
+
+        <Label Text="Markup Extension x:Static"
+               TextColor="White"
+               Background="{x:Static local:MyRes.OSTBrush3}" />
+
+        <Button Text="Resource aktualisieren" 
+                Clicked="UpdateResource_OnClicked" />
+        
+    </VerticalStackLayout>
+</ContentPage>

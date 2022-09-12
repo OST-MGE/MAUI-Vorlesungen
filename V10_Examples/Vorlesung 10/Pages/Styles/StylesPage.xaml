@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:s="clr-namespace:System;assembly=System.Runtime"
+             x:Class="Vorlesung_10.Pages.Styles.StylesPage"
+             Title="Styles">
+
+    <ContentPage.Resources>
+        <Color x:Key="BlackColor">Black</Color>
+        <Color x:Key="BlueColor">LightBlue</Color>
+        <Color x:Key="RedColor">LightCoral</Color>
+        <Color x:Key="YellowColor">LightYellow</Color>
+        <s:Double x:Key="BorderWidth">2</s:Double>
+
+        <Style TargetType="Button" x:Key="NormalButton">
+            <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}" />
+            <Setter Property="BorderColor" Value="{StaticResource RedColor}" />
+            <Setter Property="BorderWidth" Value="{StaticResource BorderWidth}" />
+        </Style>
+
+        <Style TargetType="Button" x:Key="DangerButton" BasedOn="{StaticResource NormalButton}">
+            <Setter Property="BackgroundColor" Value="{StaticResource RedColor}" />
+        </Style>
+
+        <Style TargetType="Button" BasedOn="{StaticResource NormalButton}" />
+
+        <Style TargetType="Button" x:Key="BrushButton">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0" Color="{StaticResource RedColor}" />
+                        <GradientStop Offset="0.5" Color="{StaticResource YellowColor}" />
+                        <GradientStop Offset="1" Color="{StaticResource RedColor}" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Spacing="5" Margin="20">
+
+        <Button Text="OK" />
+
+        <Button Text="Abbrechen"
+                BackgroundColor="{StaticResource RedColor}" />
+
+        <Button Text="OK"
+                Style="{StaticResource NormalButton}" />
+
+        <Button Text="Abbrechen #1"
+                Style="{StaticResource DangerButton}" />
+
+        <Button Text="Brush"
+                Style="{StaticResource BrushButton}" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
