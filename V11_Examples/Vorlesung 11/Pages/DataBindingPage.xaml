@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:Vorlesung_11.Converter"
+             xmlns:pages="clr-namespace:Vorlesung_11.Pages"
+             xmlns:model="clr-namespace:Vorlesung_11.Model"
+             x:Class="Vorlesung_11.Pages.DataBindingPage"
+             x:DataType="pages:DataBindingPage"
+             Title="Data Binding">
+
+    <ContentPage.Resources>
+        <model:User x:Key="ResUser" />
+
+        <converter:ReverseConverter x:Key="ReverseConverter" />
+        <converter:RGBConverter x:Key="RGBConverter" />
+
+        <Style TargetType="Border">
+            <Setter Property="Stroke" Value="LightGray" />
+            <Setter Property="StrokeThickness" Value="1" />
+            <Setter Property="StrokeShape" Value="Rectangle" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+
+        <Style TargetType="VerticalStackLayout">
+            <Setter Property="Spacing" Value="10" />
+        </Style>
+
+        <DataTemplate x:Key="UserTemplate" x:DataType="model:User">
+            <ViewCell>
+                <VerticalStackLayout Spacing="0" Margin="3">
+                    <Label FontAttributes="Bold">
+                        <Label.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="FirstName" />
+                                <Binding Path="LastName" />
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
+                    <Label Text="{Binding Age, StringFormat='{0} Jahre'}"
+                           FontSize="10" />
+                </VerticalStackLayout>
+            </ViewCell>
+        </DataTemplate>
+
+    </ContentPage.Resources>
+
+    <Grid ColumnDefinitions="*,*" 
+          RowDefinitions="*,*"
+          Padding="10"
+          RowSpacing="10"
+          ColumnSpacing="10">
+
+        <Border Grid.Column="0" 
+                Grid.Row="0">
+
+            <VerticalStackLayout>
+                <Entry Text="{Binding Path=User.FirstName, Mode=TwoWay, Converter={StaticResource ReverseConverter}}" />
+
+                <Entry>
+                    <Entry.Text>
+                        <Binding Path="User.FirstName"
+                                 Mode="TwoWay"
+                                 Converter="{StaticResource ReverseConverter}" />
+                    </Entry.Text>
+                </Entry>
+
+                <Label Text="{Binding User.LastName}" />
+
+                <Label Text="{Binding User.Age}" />
+
+                <Label Text="{Binding Source={StaticResource ResUser}, Path=FirstName}" />
+
+                <Label>
+                    <Label.Text>
+                        <MultiBinding StringFormat="{}{0} {1} ({2} Jahre)">
+                            <Binding Path="User.FirstName" />
+                            <Binding Path="User.LastName" />
+                            <Binding Path="User.Age" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
+
+                <Button Text="Alter +" Clicked="IncrementAge_OnClick" />
+            </VerticalStackLayout>
+
+        </Border>
+
+        <Border Grid.Column="1" 
+                Grid.Row="0">
+
+            <VerticalStackLayout>
+                <Slider x:Name="RSlider" Minimum="0" Maximum="255" />
+                <Slider x:Name="GSlider" Minimum="0" Maximum="255" />
+                <Slider x:Name="BSlider" Minimum="0" Maximum="255" />
+                <Label HeightRequest="40">
+                    <Label.Background>
+                        <SolidColorBrush>
+                            <SolidColorBrush.Color>
+                                <MultiBinding Converter="{StaticResource RGBConverter}">
+                                    <Binding Source="{x:Reference Name=RSlider}" Path="Value" />
+                                    <Binding Source="{x:Reference Name=GSlider}" Path="Value" />
+                                    <Binding Source="{x:Reference Name=BSlider}" Path="Value" />
+                                </MultiBinding>
+                            </SolidColorBrush.Color>
+                        </SolidColorBrush>
+                    </Label.Background>
+                </Label>
+
+                <Label Text="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=Title}" />
+
+                <Entry x:Name="MyText" Text="Hallo MGE" />
+                <Entry Text="{Binding Source={x:Reference Name=MyText}, Path=Text}" />
+            </VerticalStackLayout>
+
+        </Border>
+
+        <Border Grid.Column="0" 
+                Grid.Row="1">
+
+            <ListView>
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type model:User}">
+                        <model:User />
+                        <model:User />
+                        <model:User />
+                    </x:Array>
+                </ListView.ItemsSource>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:User">
+                        <TextCell Text="{Binding FirstName}"
+                                  Detail="{Binding LastName}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Border>
+
+
+        <Border Grid.Column="1" 
+                Grid.Row="1">
+
+            <ScrollView>
+                <VerticalStackLayout>
+                    <Button Text="Thomas einfügen" Clicked="AddThomas_OnClicked" Margin="0,0,0,10" />
+                    <ListView ItemsSource="{Binding Users}"
+                              ItemTemplate="{StaticResource UserTemplate}"
+                              SelectedItem="{Binding SelectedUser}" />
+                </VerticalStackLayout>
+            </ScrollView>
+        </Border>
+
+    </Grid>
+
+</ContentPage>
