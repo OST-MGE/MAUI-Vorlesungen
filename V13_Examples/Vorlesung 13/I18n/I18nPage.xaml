@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:t="clr-namespace:Vorlesung_13.I18n.RESX"
+             x:Class="Vorlesung_13.I18n.I18nPage"
+             Title="Mehrsprachigkeit">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Spacing="10" Padding="10">
+        <Label Text="{DynamicResource Key1}" />
+        <Label Text="{DynamicResource Key2}" />
+        <Label Text="{x:Static t:Translations.Key1}" />
+        <Label Text="{x:Static t:Translations.Key2}" />
+
+        <Button Text="DE laden" Clicked="ButtonDE_OnClicked" />
+        <Button Text="EN laden" Clicked="ButtonEN_OnClicked" />
+    </VerticalStackLayout>
+
+</ContentPage>

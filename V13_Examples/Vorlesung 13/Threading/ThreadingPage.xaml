@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Vorlesung_13.Threading"
+             x:Class="Vorlesung_13.Threading.ThreadingPage"
+             x:DataType="local:ThreadingViewModel">
+
+    <VerticalStackLayout Spacing="10" Padding="10">
+        <ActivityIndicator x:Name="ProgressIndicator"
+                           IsRunning="{Binding IsCalculating}" 
+                           Margin="0, 0, 0, 10" />
+
+        <Label x:Name="OutputLabel" 
+               Margin="0, 0, 0, 20"
+               HorizontalTextAlignment="Center" />
+
+        <Button Text="Blockierende Operation" 
+                Clicked="BlockingOperation_OnClicked" />
+
+        <Button Text="Nicht-blockierende Operation mit Exception" 
+                Clicked="NonBlockingOperationWithException_OnClicked" />
+
+        <Button Text="Nicht-blockierende Operation ohne Exception" 
+                Clicked="NonBlockingOperationWithoutException_OnClicked" />
+
+        <Button Text="Command auf View Model" 
+                Command="{Binding CalculateCommand}" />
+    </VerticalStackLayout>
+
+</ContentPage>
