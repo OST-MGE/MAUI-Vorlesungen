@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:cc="clr-namespace:Vorlesung_14.CustomControls"
+             x:Class="Vorlesung_14.Pages.CustomControlsPage"
+             Title="Custom Controls"
+             Padding="10">
+
+    <ContentPage.Resources>
+        <Style TargetType="cc:AlertLabel">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BackgroundColor" Value="DarkRed" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Spacing="10">
+        <cc:AlertLabel Text="Label 1" />
+        <cc:AlertLabel Text="Label 2" />
+        <cc:AlertBox Message="Box 1" />
+        <cc:AlertBox Message="Box 2" />
+
+        <cc:AlertBorder>
+            <Grid>
+                <Image Source="{FontImage &#xf071;, FontFamily=FontAwesomeSolid, Color=White, Size=24}"
+                       Aspect="Center"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" 
+                       Margin="5,0,0,0" />
+
+                <Label Text="Border 1"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center" />
+            </Grid>
+        </cc:AlertBorder>
+
+    </VerticalStackLayout>
+
+</ContentPage>
