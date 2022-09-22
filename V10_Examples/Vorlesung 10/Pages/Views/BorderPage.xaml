@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Vorlesung_10.Pages.Views.BorderPage"
+             Title="Border und Shadow">
+
+    <VerticalStackLayout Padding="20">
+
+        <Border StrokeThickness="4"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Background="#D0A9D0"
+                HorizontalOptions="Center">
+
+            <Border.Stroke>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#6E1C50" Offset="0" />
+                    <GradientStop Color="#56276D" Offset="1" />
+                </LinearGradientBrush>
+            </Border.Stroke>
+
+            <Border.Shadow>
+                <Shadow Brush="White" 
+                        Offset="0,0" 
+                        Opacity="0.8" 
+                        Radius="25"  />
+            </Border.Shadow>
+
+            <Label Text="MGE"
+                   TextColor="Black"
+                   Padding="60,8"
+                   FontSize="24"
+                   FontFamily="OpenSansSemibold"/>
+        </Border>
+
+    </VerticalStackLayout>
+
+</ContentPage>

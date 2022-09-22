@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controls:TabbedPage xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                     xmlns:controls="http://schemas.microsoft.com/dotnet/2021/maui"
+                     x:Class="Vorlesung_09.Pages.GUI.TabbedPage"
+                     Title="Tabbed Page">
+  <controls:ContentPage Title="Tab 1" IconImageSource="icon_cat.png" />
+  <controls:ContentPage Title="Tab 2" IconImageSource="icon_dragon.png" />
+  <controls:ContentPage Title="Tab 3" IconImageSource="icon_gamepad.png"/>
+</controls:TabbedPage>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Vorlesung_12.Classic.ViewModel"
+             x:Class="Vorlesung_12.Classic.View.UserPage"
+             x:DataType="vm:UserViewModel"
+             Title="User (Klassisch)">
+
+    <VerticalStackLayout Spacing="5" Margin="10">
+        <Entry Text="{Binding FirstName}" />
+        <Entry Text="{Binding LastName}" />
+        <Entry Text="{Binding Age}" Keyboard="Numeric" />
+        <Label Text="{Binding FormattedName}" />
+        <Label Text="{Binding FormattedAge}" />
+        <Button Text="Alter ++" Command="{Binding IncreaseAgeCommand}" />
+        <Button Text="Alter --" Command="{Binding DecreaseAgeCommand}" />
+    </VerticalStackLayout>
+
+</ContentPage>

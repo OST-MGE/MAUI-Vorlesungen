@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Vorlesung_09.Pages.GUI.LayoutsPage"
+            Title="Layouts"
+            Padding="5">
+
+    <ContentPage Title="StackLayout (V)">
+        <StackLayout Orientation="Vertical" Spacing="2">
+            <Label Background="Purple" Text="Kind 1" />
+            <Label Background="Purple" Text="Kind 2" />
+            <Label Background="Purple" Text="Kind 3" />
+            <Label Background="Purple" Text="Kind 4" />
+            <Label Background="Purple" Text="Kind 5" />
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="StackLayout (H)">
+        <StackLayout Orientation="Horizontal" Spacing="2">
+            <Label Background="Purple" Text="Kind 1" />
+            <Label Background="Purple" Text="Kind 2" />
+            <Label Background="Purple" Text="Kind 3" />
+            <Label Background="Purple" Text="Kind 4" />
+            <Label Background="Purple" Text="Kind 5" />
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="VerticalStackLayout">
+        <VerticalStackLayout Spacing="2">
+            <Label Background="Purple" Text="Kind 1" />
+            <Label Background="Purple" Text="Kind 2" />
+            <Label Background="Purple" Text="Kind 3" />
+            <Label Background="Purple" Text="Kind 4" />
+            <Label Background="Purple" Text="Kind 5" />
+        </VerticalStackLayout>
+    </ContentPage>
+
+    <ContentPage Title="HorizontalStackLayout">
+        <HorizontalStackLayout Spacing="2">
+            <Label Background="Purple" Text="Kind 1" />
+            <Label Background="Purple" Text="Kind 2" />
+            <Label Background="Purple" Text="Kind 3" />
+            <Label Background="Purple" Text="Kind 4" />
+            <Label Background="Purple" Text="Kind 5" />
+        </HorizontalStackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Alignment">
+        <StackLayout Spacing="2">
+            <Label Background="Purple" Text="Kind 1" HorizontalOptions="Start" />
+            <Label Background="Purple" Text="Kind 2" HorizontalOptions="Center" />
+            <Label Background="Purple" Text="Kind 3" HorizontalOptions="End" />
+            <Label Background="Purple" Text="Kind 4" HorizontalOptions="Fill" />
+            <Label Background="Purple" Text="Kind 5" />
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="FlexLayout (Row)">
+        <FlexLayout Direction="Row" Wrap="Wrap" AlignItems="Start" AlignContent="Start">
+            <Label Background="Purple" Text="Kind 1" WidthRequest="200" HeightRequest="200" Margin="2,2,0,0" />
+            <Label Background="Purple" Text="Kind 2" WidthRequest="200" HeightRequest="200" Margin="2,2,0,0" />
+            <Label Background="Purple" Text="Kind 3" WidthRequest="200" HeightRequest="200" Margin="2,2,0,0" />
+            <Label Background="Purple" Text="Kind 4" WidthRequest="200" HeightRequest="200" Margin="2,2,0,0" />
+            <Label Background="Purple" Text="Kind 5" WidthRequest="200" HeightRequest="200" Margin="2,2,0,0" />
+        </FlexLayout>
+    </ContentPage>
+
+    <ContentPage Title="FlexLayout (Column)">
+        <FlexLayout Direction="Column" Wrap="Wrap" AlignItems="Start" AlignContent="Start">
+            <Label Background="Purple" Text="Kind 1" WidthRequest="200" HeightRequest="200" Margin="2,2,0,0" />
+            <Label Background="Purple" Text="Kind 2" WidthRequest="200" HeightRequest="200" Margin="2,2,0,0" />
+            <Label Background="Purple" Text="Kind 3" WidthRequest="200" HeightRequest="200" Margin="2,2,0,0" />
+            <Label Background="Purple" Text="Kind 4" WidthRequest="200" HeightRequest="200" Margin="2,2,0,0" />
+            <Label Background="Purple" Text="Kind 5" WidthRequest="200" HeightRequest="200" Margin="2,2,0,0" />
+        </FlexLayout>
+    </ContentPage>
+
+    <ContentPage Title="Grid 1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Background="Purple" Text="Kind 1" />
+            <Label Grid.Row="1" Grid.Column="1" Background="Purple" Text="Kind 2" />
+            <Label Grid.Row="2" Grid.Column="2" Background="Purple" Text="Kind 3" />
+        </Grid>
+    </ContentPage>
+
+    <ContentPage Title="Grid 2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Background="Purple" Text="Kind 1" />
+            <Label Grid.Row="1" Grid.Column="1" Background="Purple" Text="Kind 2" />
+            <Label Grid.Row="2" Grid.Column="2" Background="Purple" Text="Kind 3" />
+        </Grid>
+    </ContentPage>
+
+    <ContentPage Title="Absolute Layout (A)">
+        <AbsoluteLayout>
+            <Label Background="Purple" Text="Kind 1" AbsoluteLayout.LayoutBounds="  0,  80, 60, 60" />
+            <Label Background="Purple" Text="Kind 2" AbsoluteLayout.LayoutBounds=" 80,   0, 60, 60" />
+            <Label Background="Purple" Text="Kind 3" AbsoluteLayout.LayoutBounds="140, 140" />
+        </AbsoluteLayout>
+    </ContentPage>
+
+    <ContentPage Title="Absolute Layout (P)">
+        <AbsoluteLayout>
+            <Label Background="Purple" Text="Kind 1" AbsoluteLayout.LayoutBounds="0.0, 0.5, 60, 60" AbsoluteLayout.LayoutFlags="PositionProportional" />
+            <Label Background="Purple" Text="Kind 2" AbsoluteLayout.LayoutBounds="0.5, 0.0, 60, 60" AbsoluteLayout.LayoutFlags="PositionProportional" />
+            <Label Background="Purple" Text="Kind 3" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.25, 0.25" AbsoluteLayout.LayoutFlags="All" />
+        </AbsoluteLayout>
+    </ContentPage>
+
+</TabbedPage>

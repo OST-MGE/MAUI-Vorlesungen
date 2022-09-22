@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:s="clr-namespace:System;assembly=System.Runtime"
+             x:Class="Vorlesung_10.Pages.Views.ImagePage"
+             Title="Bilder">
+
+    <ContentPage.Resources>
+        <s:Double x:Key="ImageHeight">100</s:Double>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout>
+
+        <Image Source="ost_logo.jpg" 
+               Aspect="AspectFit"
+               HeightRequest="{StaticResource ImageHeight}" />
+
+        <Image Source="ost_logo.jpg" 
+               Aspect="AspectFill"
+               HeightRequest="{StaticResource ImageHeight}" />
+
+        <Image Source="ost_logo.jpg" 
+               Aspect="Fill"
+               HeightRequest="{StaticResource ImageHeight}" />
+
+        <Image Source="ost_logo.jpg" 
+               Aspect="Center"
+               HeightRequest="{StaticResource ImageHeight}" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

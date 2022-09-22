@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:typeConverter="clr-namespace:Vorlesung_09.Pages.XAML.TypeConverter"
+            xmlns:markupExtension="clr-namespace:Vorlesung_09.Pages.XAML.MarkupExtension"
+            x:Class="Vorlesung_09.Pages.XAML.XamlFeatures"
+            Title="XAML Features">
+
+    <ContentPage Title="Named Elements">
+        <Label x:Name="NamedElement" 
+               Text="Named Element" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center" />
+    </ContentPage>
+
+    <ContentPage Title="Syntaxen">
+        <VerticalStackLayout HorizontalOptions="Fill" 
+                             VerticalOptions="Center"
+                             Padding="20" 
+                             Spacing="5">
+            <Label Text="Attribute Syntax"
+                   TextColor="Red"
+                   Background="Blue"
+                   HorizontalTextAlignment="Center" />
+
+            <Label Text="Property Element Syntax" 
+                   HorizontalTextAlignment="Center">
+                <Label.TextColor>
+                    <Color>Red</Color>
+                </Label.TextColor>
+                <Label.Background>
+                    <SolidColorBrush>
+                        <SolidColorBrush.Color>
+                            <Color>Blue</Color>
+                        </SolidColorBrush.Color>
+                    </SolidColorBrush>
+                </Label.Background>
+            </Label>
+        </VerticalStackLayout>
+
+    </ContentPage>
+
+    <ContentPage Title="Content Properties">
+        <VerticalStackLayout HorizontalOptions="Center" 
+                             VerticalOptions="Center"
+                             Spacing="5">
+            <Label Text="Inhalt" />
+            <Label>Inhalt</Label>
+        </VerticalStackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Attached Properties">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Background="Red" />
+            <Label Grid.Row="1" Background="Green" />
+            <Label Grid.Row="2" Background="Blue" />
+        </Grid>
+    </ContentPage>
+
+    <ContentPage Title="Type Converter">
+        <VerticalStackLayout HorizontalOptions="Center" 
+                             VerticalOptions="Center"
+                             Spacing="5">
+            <typeConverter:LocationControl Center="10, 20" />
+
+            <typeConverter:LocationControl>
+                <typeConverter:LocationControl.Center>
+                    <typeConverter:Location>
+                        <typeConverter:Location.Latitude>50</typeConverter:Location.Latitude>
+                        <typeConverter:Location.Longitude>50</typeConverter:Location.Longitude>
+                    </typeConverter:Location>
+                </typeConverter:LocationControl.Center>
+            </typeConverter:LocationControl>
+        </VerticalStackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Markup Extensions">
+        <VerticalStackLayout HorizontalOptions="Center" 
+                             VerticalOptions="Center">
+            <Label Text="{markupExtension:LocationExtension Latitude=10, Longitude=20}" />
+        </VerticalStackLayout>
+    </ContentPage>
+
+</TabbedPage>

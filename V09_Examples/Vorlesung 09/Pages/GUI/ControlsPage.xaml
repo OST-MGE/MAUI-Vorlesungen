@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Vorlesung_09.Pages.GUI.ControlsPage"
+             Title="Controls"
+             Padding="10">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10">
+            <Border Stroke="Purple" StrokeThickness="3" Padding="5">
+                <Label Text="Label mit Border" HorizontalOptions="Center" />
+            </Border>
+
+            <Frame BorderColor="Purple" CornerRadius="5" HasShadow="False">
+                <Label Text="Label mit Frame" HorizontalOptions="Center" />
+            </Frame>
+
+            <Image Source="icon_cat.png" HeightRequest="60"/>
+
+            <Button Text="Button" />
+
+            <ImageButton Source="icon_dragon.png" HeightRequest="40" Aspect="AspectFit" Padding="5" />
+
+            <HorizontalStackLayout>
+                <RadioButton Content="A" IsChecked="True" />
+                <RadioButton Content="B" />
+                <RadioButton Content="C" />
+                <RadioButton Content="D" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <CheckBox/>
+                <CheckBox IsChecked="True" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Switch />
+                <Switch IsToggled="True" />
+            </HorizontalStackLayout>
+
+            <Slider Minimum="0" Maximum="100" Value="50"/>
+
+            <Stepper Minimum="0" Maximum="100" Value="50" Increment="5" />
+
+            <DatePicker />
+
+            <TimePicker />
+
+            <Entry Text="Entry" />
+
+            <Editor Text="Editor" HeightRequest="80" />
+
+            <ActivityIndicator IsRunning="True" />
+            <ProgressBar Progress="0.5" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

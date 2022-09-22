@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Vorlesung_10.Pages.Views.FontPage"
+             Title="Schriften">
+
+    <VerticalStackLayout Spacing="5">
+        <Label Text="Roboto (Regular)"
+               FontFamily="RobotoRegular"
+               HorizontalOptions="Center" />
+        
+        <Label Text="Roboto (Bold)"
+               FontFamily="RobotoBold"
+               HorizontalOptions="Center" />
+
+        <Label Text="Roboto (Italic)"
+               FontFamily="RobotoItalic"
+               HorizontalOptions="Center" />
+
+        <Label Text="OpenSans (Regular)"
+               FontFamily="OpenSansRegular"
+               HorizontalOptions="Center" />
+
+        <Label Text="OpenSans (Semibold)"
+               FontFamily="OpenSansSemibold"
+               HorizontalOptions="Center" />
+
+        <!-- &#xf6e2; steht für \uf6e2 -->
+        <Image Aspect="Center">
+            <Image.Source>
+                <FontImageSource FontFamily="FontAwesomeSolid"
+                                 Glyph="&#xf6e2;"
+                                 Color="White"
+                                 Size="50"/>
+            </Image.Source>
+        </Image>
+    </VerticalStackLayout>
+
+</ContentPage>
