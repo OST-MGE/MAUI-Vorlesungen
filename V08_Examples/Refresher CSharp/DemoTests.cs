@@ -3,6 +3,8 @@
 // ReSharper disable ConvertToLambdaExpression
 // ReSharper disable CommentTypo
 
+using Xunit.Abstractions;
+
 namespace Refresher_CSharp
 {
     using System;
@@ -11,19 +13,26 @@ namespace Refresher_CSharp
 
     public class Tests
     {
+        private readonly ITestOutputHelper _testOutputHelper;
+
+        public Tests(ITestOutputHelper testOutputHelper)
+        {
+            _testOutputHelper = testOutputHelper;
+        }
+
         [Fact]
         public void Properties()
         {
             var person = new Person
             {
                 FirstName = "Thomas",
-                LastName = "Kälin"
+                LastName = "KÃ¤lin"
             };
 
             person.FirstName.Should().Be("Thomas");
-            person.LastName.Should().Be("Kälin");
-            person.FullName.Should().Be("Kälin Thomas");
-            person.FullNameInv.Should().Be("Thomas Kälin");
+            person.LastName.Should().Be("KÃ¤lin");
+            person.FullName.Should().Be("KÃ¤lin Thomas");
+            person.FullNameInv.Should().Be("Thomas KÃ¤lin");
         }
 
         [Fact]
@@ -53,7 +62,7 @@ namespace Refresher_CSharp
 
             Action<int, int> addAndSubtract = (a, b) =>
             {
-                // Closure: Zugriff auf add, subtract1 und subtract2 möglich
+                // Closure: Zugriff auf add, subtract1 und subtract2 mï¿½glich
                 add(a, b).Should().Be(a + b);
                 subtract1(a, b).Should().Be(a - b);
                 subtract2(a, b).Should().Be(a - b);
@@ -67,9 +76,9 @@ namespace Refresher_CSharp
         {
             var person = new Person();
 
-            EventHandler<string> onNickNameChanged = (sender, name) =>
+            EventHandler<string> onNickNameChanged = (_, name) =>
             {
-                Console.WriteLine(name);
+                _testOutputHelper.WriteLine(name);
             };
 
             person.NickNameChanged += onNickNameChanged;

@@ -52,12 +52,7 @@
 	  <None Remove="Resources\Images\icon_dragon.svg" />
 	  <None Remove="Resources\Images\icon_gamepad.svg" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Resources\Raw\" />
-	  <Folder Include="Resources\Styles\" />
-	</ItemGroup>
-
+	
 	<ItemGroup>
 	  <MauiXaml Update="Pages\GUI\ControlsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>

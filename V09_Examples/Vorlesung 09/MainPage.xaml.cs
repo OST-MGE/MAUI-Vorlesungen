@@ -24,7 +24,7 @@ public partial class MainPage : ContentPage
         };
 
         Helpers.SubscribeToLifecycleEvents(window);
-        Application.Current.OpenWindow(window);
+        Application.Current!.OpenWindow(window);
     }
 
     private void XamlVersusCSharp_OnClicked(object sender, EventArgs e) => ShowPageInCurrentWindow<XamlVersusCSharp>();

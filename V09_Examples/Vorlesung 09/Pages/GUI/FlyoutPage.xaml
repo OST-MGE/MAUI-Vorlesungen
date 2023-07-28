@@ -12,11 +12,13 @@
 
     <controls:FlyoutPage.Detail>
         <controls:NavigationPage>
+            <!-- ReSharper disable Xaml.LanguageLevel -->
             <x:Arguments>
                 <controls:ContentPage Title="Inhalt">
                     <controls:Label Text="Inhalt" />
                 </controls:ContentPage>
             </x:Arguments>
+            <!-- ReSharper restore Xaml.LanguageLevel -->            
         </controls:NavigationPage>
     </controls:FlyoutPage.Detail>
 

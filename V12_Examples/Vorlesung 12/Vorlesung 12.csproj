@@ -48,12 +48,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Resources\Images\" />
-	  <Folder Include="Resources\Raw\" />
-	  <Folder Include="Resources\Styles\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <MauiXaml Update="Classic\View\UserPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

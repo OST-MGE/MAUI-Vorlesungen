@@ -57,11 +57,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Resources\Raw\" />
-	  <Folder Include="Resources\Styles\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Compile Update="Pages\Views\FontPage.xaml.cs">
 	    <DependentUpon>FontPage.xaml</DependentUpon>
 	  </Compile>

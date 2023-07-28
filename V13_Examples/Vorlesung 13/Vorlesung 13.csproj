@@ -48,12 +48,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Resources\Images\" />
-	  <Folder Include="Resources\Raw\" />
-	  <Folder Include="Resources\Styles\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Compile Update="I18n\RESX\Translations.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿// ReSharper disable PropertyCanBeMadeInitOnly.Local
+using System.ComponentModel;
 using Vorlesung_12.Pierced.Model;
 using Vorlesung_12.Shared.Model;
 using Vorlesung_12.Shared.ViewModel;

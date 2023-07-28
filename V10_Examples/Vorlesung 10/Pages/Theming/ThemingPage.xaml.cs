@@ -8,7 +8,7 @@ public partial class ThemingPage : ContentPage
 
         LoadThemeBasedOnOperatingSystem();
 
-        Application.Current.RequestedThemeChanged += (_, _) =>
+        Application.Current!.RequestedThemeChanged += (_, _) =>
         {
             LoadThemeBasedOnOperatingSystem();
         };
@@ -16,7 +16,7 @@ public partial class ThemingPage : ContentPage
 
     private void LoadThemeBasedOnOperatingSystem()
     {
-        var activeTheme = Application.Current.RequestedTheme;
+        var activeTheme = Application.Current!.RequestedTheme;
         var isLightThemeActive = activeTheme == AppTheme.Light;
 
         if (isLightThemeActive)
