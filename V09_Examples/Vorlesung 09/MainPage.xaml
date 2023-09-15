@@ -15,7 +15,7 @@
             <Button Text="TabbedPage" Clicked="TabbedPage_OnClicked" Margin="0, 20, 0, 0" />
             <Button Text="FlyoutPage" Clicked="FlyoutPage_OnClicked" />
             <Button Text="Layouts" Clicked="Layouts_OnClicked" />
-            <Button Text="Controls" Clicked="Controls_OnClicked" />
+            <Button Text="Views (Controls)" Clicked="Controls_OnClicked" />
         </VerticalStackLayout>
     </ScrollView>
 
