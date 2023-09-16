@@ -34,6 +34,9 @@
                                  Size="50"/>
             </Image.Source>
         </Image>
+        
+        <Image Aspect="Center" 
+               Source="{FontImage &#xf6e2;, FontFamily=FontAwesomeSolid, Color=Purple, Size=50}" />
     </VerticalStackLayout>
 
 </ContentPage>

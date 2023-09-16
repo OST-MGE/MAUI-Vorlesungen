@@ -29,11 +29,11 @@
     <VerticalStackLayout Spacing="{StaticResource Spacing}" 
                          Margin="{StaticResource MyMargin}">
 
-        <Label Text="Sßtatisch, Lokal, Property Element Syntax" TextColor="White">
+        <Label Text="Statisch, Lokal, Property Element Syntax" TextColor="White">
             <Label.Background>
                 <StaticResource Key="OSTBrush" />
             </Label.Background>
-        </Label>ß
+        </Label>
 
         <Label Text="Statisch, Lokal, Attribute Syntax mit Key"
                TextColor="White"

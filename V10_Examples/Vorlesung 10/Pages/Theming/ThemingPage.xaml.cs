@@ -39,6 +39,6 @@ public partial class ThemingPage : ContentPage
         mergedDictionaries.Clear();
         mergedDictionaries.Add(new TTheme());
 
-        ActiveThemeLabel.Text = $"Aktives Theme: {typeof(TTheme).Name}";
+        ActiveThemeLabel.Text = $"Aktives Theme: {typeof(TTheme).Name.Replace("Theme",string.Empty)}";
     }
 }
