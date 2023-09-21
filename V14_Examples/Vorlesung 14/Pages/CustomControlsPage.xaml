@@ -13,25 +13,38 @@
             <Setter Property="HorizontalTextAlignment" Value="Center" />
             <Setter Property="Padding" Value="5" />
         </Style>
+        
+        <Style TargetType="Image" x:Key="AlertBorderImage">
+            <Setter Property="Aspect" Value="Center" />
+            <Setter Property="Source" Value="{FontImage &#xf071;, FontFamily=FontAwesomeSolid, Color=White, Size=24}" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="Margin" Value="5,0,0,0" />
+        </Style>
+        
+        <Style TargetType="Label" x:Key="AlertBorderLabel">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
     </ContentPage.Resources>
 
     <VerticalStackLayout Spacing="10">
         <cc:AlertLabel Text="Label 1" />
         <cc:AlertLabel Text="Label 2" />
+        
         <cc:AlertBox Message="Box 1" />
         <cc:AlertBox Message="Box 2" />
 
         <cc:AlertBorder>
             <Grid>
-                <Image Source="{FontImage &#xf071;, FontFamily=FontAwesomeSolid, Color=White, Size=24}"
-                       Aspect="Center"
-                       HorizontalOptions="Start"
-                       VerticalOptions="Center" 
-                       Margin="5,0,0,0" />
-
-                <Label Text="Border 1"
-                       HorizontalTextAlignment="Center"
-                       VerticalOptions="Center" />
+                <Image Style="{StaticResource AlertBorderImage}" />
+                <Label Text="Border 1" Style="{StaticResource AlertBorderLabel}" />
+            </Grid>
+        </cc:AlertBorder>
+        <cc:AlertBorder>
+            <Grid>
+                <Image Style="{StaticResource AlertBorderImage}" />
+                <Label Text="Border 2" Style="{StaticResource AlertBorderLabel}" />
             </Grid>
         </cc:AlertBorder>
 
