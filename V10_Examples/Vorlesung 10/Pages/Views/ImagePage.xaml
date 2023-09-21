@@ -9,24 +9,33 @@
         <s:Double x:Key="ImageHeight">100</s:Double>
     </ContentPage.Resources>
 
-    <VerticalStackLayout>
+    <Grid RowDefinitions="*,*"
+          ColumnDefinitions="*,*">
 
-        <Image Source="ost_logo.jpg" 
+        <Image Grid.Row="0"
+               Grid.Column="0"
+               Source="ost_logo.jpg" 
                Aspect="AspectFit"
                HeightRequest="{StaticResource ImageHeight}" />
 
-        <Image Source="ost_logo.jpg" 
+        <Image Grid.Row="0"
+               Grid.Column="1"
+               Source="ost_logo.jpg" 
                Aspect="AspectFill"
                HeightRequest="{StaticResource ImageHeight}" />
 
-        <Image Source="ost_logo.jpg" 
+        <Image Grid.Row="1"
+               Grid.Column="0"
+               Source="ost_logo.jpg" 
                Aspect="Fill"
                HeightRequest="{StaticResource ImageHeight}" />
 
-        <Image Source="ost_logo.jpg" 
+        <Image Grid.Row="1"
+               Grid.Column="1"
+               Source="ost_logo.jpg" 
                Aspect="Center"
                HeightRequest="{StaticResource ImageHeight}" />
 
-    </VerticalStackLayout>
+    </Grid>
 
 </ContentPage>

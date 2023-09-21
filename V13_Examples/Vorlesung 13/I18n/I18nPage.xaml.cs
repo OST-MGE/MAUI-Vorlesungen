@@ -2,6 +2,7 @@ using System.Globalization;
 
 namespace Vorlesung_13.I18n;
 
+// ReSharper disable once InconsistentNaming
 public partial class I18nPage : ContentPage
 {
     private const string KeyDE = "de";
@@ -33,10 +34,9 @@ public partial class I18nPage : ContentPage
         const string assemblyName = "Vorlesung 13";
         var typeName = $"Vorlesung_13.I18n.Resources.Translations_{key.ToUpperInvariant()}";
 
-        // ReSharper disable once PossibleNullReferenceException
-        var rd = (ResourceDictionary)Activator.CreateInstance(assemblyName, typeName).Unwrap();
+        var rd = (ResourceDictionary)Activator.CreateInstance(assemblyName, typeName)!.Unwrap();
 
-        foreach (var rdKey in rd.Keys)
+        foreach (var rdKey in rd!.Keys)
         {
             Resources[rdKey] = rd[rdKey];
         }

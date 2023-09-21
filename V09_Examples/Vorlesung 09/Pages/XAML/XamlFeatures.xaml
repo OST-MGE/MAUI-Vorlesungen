@@ -50,13 +50,7 @@
     </ContentPage>
 
     <ContentPage Title="Attached Properties">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="3*" />
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="1*" />
-            </Grid.RowDefinitions>
-
+        <Grid RowDefinitions="3*,2*,1*">
             <Label Grid.Row="0" Background="Red" />
             <Label Grid.Row="1" Background="Green" />
             <Label Grid.Row="2" Background="Blue" />

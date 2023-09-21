@@ -2,6 +2,5 @@
 
 public static class MyRes
 {
-    public static readonly SolidColorBrush OSTBrush3 =
-        new(Color.FromArgb("6E1C50"));
+    public static readonly SolidColorBrush OSTBrush3 = new(Color.FromArgb("6E1C50"));
 }

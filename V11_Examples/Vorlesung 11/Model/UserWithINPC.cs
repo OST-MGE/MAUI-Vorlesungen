@@ -4,10 +4,10 @@ using System.ComponentModel;
 
 public sealed class UserWithINPC : IUser, INotifyPropertyChanged
 {
-    private string _firstName = "Thomas";
-    private string _lastName = "Kaelin";
-    private int _age = 38;
-
+    private string _firstName = UserDefaults.FirstName;
+    private string _lastName = UserDefaults.LastName;
+    private int _age = UserDefaults.Age;
+    
     public string FirstName
     {
         get => _firstName;

@@ -139,14 +139,15 @@
         <Border Grid.Column="1" 
                 Grid.Row="1">
 
-            <ScrollView>
-                <VerticalStackLayout>
-                    <Button Text="Thomas einfügen" Clicked="AddThomas_OnClicked" Margin="0,0,0,10" />
-                    <ListView ItemsSource="{Binding Users}"
-                              ItemTemplate="{StaticResource UserTemplate}"
-                              SelectedItem="{Binding SelectedUser}" />
-                </VerticalStackLayout>
-            </ScrollView>
+            <Grid RowDefinitions="Auto,*">
+                <Button Grid.Row="0"
+                        Text="Thomas einfügen" 
+                        Clicked="AddThomas_OnClicked" Margin="0,0,0,10" />
+                <ListView Grid.Row="1"
+                          ItemsSource="{Binding Users}"
+                          ItemTemplate="{StaticResource UserTemplate}"
+                          SelectedItem="{Binding SelectedUser}" />
+            </Grid>
         </Border>
 
     </Grid>

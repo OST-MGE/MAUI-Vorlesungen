@@ -40,13 +40,14 @@
     </ContentPage.Resources>
 
     <VerticalStackLayout Margin="10" Spacing="10">
+        <Label Text="{AppThemeBinding Dark='Einstellung des OS: Dark', 
+                                      Light='Einstellung des OS: Light',
+                                      Default='Einstellung des OS: ???'}"
+               HorizontalOptions="Center"/>
+        
         <Label x:Name="ActiveThemeLabel"
-               Text="Aktives Theme: Dark Theme"
+               Text="???"
                HorizontalOptions="Center" />
-
-        <Label Text="{AppThemeBinding Dark='Aktives Theme: Dark', 
-                                      Light='Aktives Theme: Light',
-                                      Default='Aktives Theme: ???'}" />
 
         <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
             <Button Grid.Column="0" 

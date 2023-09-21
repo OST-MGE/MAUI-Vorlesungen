@@ -14,7 +14,7 @@ public partial class UserPage : ContentPage
         var user = new User
         {
             FirstName = "Thomas",
-            LastName = "Kälin",
+            LastName = "KÃ¤lin",
             Age = 38
         };
 

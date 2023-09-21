@@ -50,6 +50,7 @@
             <Editor Text="Editor" HeightRequest="80" />
 
             <ActivityIndicator IsRunning="True" />
+            
             <ProgressBar Progress="0.5" />
         </VerticalStackLayout>
     </ScrollView>

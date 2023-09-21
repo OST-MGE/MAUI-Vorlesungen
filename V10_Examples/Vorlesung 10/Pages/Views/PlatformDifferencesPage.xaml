@@ -6,7 +6,7 @@
 
     <VerticalStackLayout Spacing="5" Margin="5">
 
-        <Label Text="{OnPlatform '???', Android='Android', WinUI='Windows'}" 
+        <Label Text="{OnPlatform '???', Android='Android', MacCatalyst='macOS', WinUI='Windows'}" 
                HorizontalOptions="Center" />
 
         <Label Text="{OnIdiom '???', Phone='Phone', Desktop='Desktop'}" 

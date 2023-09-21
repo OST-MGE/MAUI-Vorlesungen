@@ -4,19 +4,26 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:Vorlesung_14.Pages"
+    xmlns:system="clr-namespace:System;assembly=mscorlib"
+    ForegroundColor="White"
     BackgroundColor="#8C185F"
     FlyoutBackgroundColor="#888888"
     TabBarBackgroundColor="#8C185F"
     TabBarTitleColor="White"
     TabBarUnselectedColor="#888888">
 
+    <Shell.Resources>
+        <system:Double x:Key="IconSize">48</system:Double>
+        <system:String x:Key="IconFont">FontAwesomeSolid</system:String>
+    </Shell.Resources>
+    
     <!-- Flyout -->
 
     <Shell.FlyoutHeader>
         <Grid HeightRequest="150"
-               BackgroundColor="#8C185F">
+              BackgroundColor="#8C185F">
 
-            <Image Source="{FontImage &#xf3cd;, FontFamily=FontAwesomeSolid, Size=300, Color=#BC488F}"
+            <Image Source="{FontImage &#xf3cd;, FontFamily={StaticResource IconFont}, Size=300, Color=#BC488F}"
                    Margin="10"/>
 
             <Label Text="MGE"
@@ -41,85 +48,117 @@
         </Grid>
     </Shell.FlyoutFooter>
 
+    <Shell.ItemTemplate>
+        <!-- Das Template wurde überschrieben, da die Flyout-Items unter macOS standardmässig sehr unschön dargstellt werden -->
+        <DataTemplate>
+            <Grid ColumnDefinitions="Auto,*">
+                <Image Grid.Column="0"
+                       Source="{Binding FlyoutIcon}"
+                       Margin="10,5,15,5"
+                       HeightRequest="36"
+                       WidthRequest="36"/>
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    
+    <Shell.MenuItemTemplate>
+        <!-- Das Template wurde überschrieben, da die Flyout-Items unter macOS standardmässig sehr unschön dargstellt werden -->
+        <DataTemplate>
+            <Grid ColumnDefinitions="Auto,*">
+                <Image Grid.Column="0"
+                       Source="{Binding Icon}"
+                       Margin="10,5,15,5"
+                       HeightRequest="36"
+                       WidthRequest="36"/>
+                <Label Grid.Column="1"
+                       Text="{Binding Text}"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    
     <FlyoutItem Title="Flyout 1"
                 Route="fo1"
-                Icon="{FontImage &#xf6e2;, FontFamily=FontAwesomeSolid, Size=48}">
+                Icon="{FontImage &#xf6e2;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
         <Tab Title="Tab 1.1"
              Route="tab1"
-             Icon="{FontImage &#xf525;, FontFamily=FontAwesomeSolid, Size=48}">
+             Icon="{FontImage &#xf525;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
             <ShellContent ContentTemplate="{DataTemplate pages:Page1}" />
         </Tab>
 
         <Tab Title="Tab 1.2"
              Route="tab2"
-             Icon="{FontImage &#xf528;, FontFamily=FontAwesomeSolid, Size=48}">
+             Icon="{FontImage &#xf528;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
             <ShellContent ContentTemplate="{DataTemplate pages:Page2}" />
         </Tab>
 
         <Tab Title="Tab 1.3"
              Route="tab3"
-             Icon="{FontImage &#xf527;, FontFamily=FontAwesomeSolid, Size=48}">
+             Icon="{FontImage &#xf527;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
             <ShellContent ContentTemplate="{DataTemplate pages:Page3}" />
         </Tab>
     </FlyoutItem>
 
     <FlyoutItem Title="Flyout 2"
                 Route="fo2"
-                Icon="{FontImage &#xf11b;, FontFamily=FontAwesomeSolid, Size=48}">
+                Icon="{FontImage &#xf11b;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
         <Tab Title="Tab 2.1"
              Route="tab1"
-             Icon="{FontImage &#xf525;, FontFamily=FontAwesomeSolid, Size=48}">
+             Icon="{FontImage &#xf525;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
             <ShellContent ContentTemplate="{DataTemplate pages:Page1}" />
         </Tab>
 
         <Tab Title="Tab 2.2"
              Route="tab2"
-             Icon="{FontImage &#xf528;, FontFamily=FontAwesomeSolid, Size=48}">
+             Icon="{FontImage &#xf528;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
             <ShellContent ContentTemplate="{DataTemplate pages:Page2}" />
         </Tab>
 
         <Tab Title="Tab 2.3"
              Route="tab3"
-             Icon="{FontImage &#xf527;, FontFamily=FontAwesomeSolid, Size=48}">
+             Icon="{FontImage &#xf527;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
             <ShellContent ContentTemplate="{DataTemplate pages:Page3}" />
         </Tab>
     </FlyoutItem>
 
     <FlyoutItem Title="Flyout 3"
                 Route="fo3"
-                Icon="{FontImage &#xf6e8;, FontFamily=FontAwesomeSolid, Size=48}">
+                Icon="{FontImage &#xf6e8;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
         <ShellContent ContentTemplate="{DataTemplate pages:Page2}" />
     </FlyoutItem>
 
     <FlyoutItem Title="Custom Controls"
                 Route="cc"
-                Icon="{FontImage &#xf55d;, FontFamily=FontAwesomeSolid, Size=48}">
+                Icon="{FontImage &#xf55d;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
         <ShellContent ContentTemplate="{DataTemplate pages:CustomControlsPage}" />
     </FlyoutItem>
 
     <MenuItem Text="Menu 1"
-              IconImageSource="{FontImage &#xf004;, FontFamily=FontAwesomeSolid, Size=48}"
+              IconImageSource="{FontImage &#xf004;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}"
               Clicked="MenuItem1_OnClicked" />
 
     <MenuItem Text="Menu 2"
-              IconImageSource="{FontImage &#xf6de;, FontFamily=FontAwesomeSolid, Size=48}"
+              IconImageSource="{FontImage &#xf6de;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}"
               Clicked="MenuItem2_OnClicked" />
 
     <!-- Tabs -->
 
     <!--<TabBar>
         <Tab Title="Tab 1.1"
-             Icon="{FontImage &#xf525;, FontFamily=FontAwesomeSolid, Size=48}">
+             Icon="{FontImage &#xf525;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
             <ShellContent ContentTemplate="{DataTemplate pages:Page1}" />
         </Tab>
 
         <Tab Title="Tab 1.2"
-             Icon="{FontImage &#xf528;, FontFamily=FontAwesomeSolid, Size=48}">
+             Icon="{FontImage &#xf528;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
             <ShellContent ContentTemplate="{DataTemplate pages:Page2}" />
         </Tab>
 
         <Tab Title="Tab 1.3"
-             Icon="{FontImage &#xf527;, FontFamily=FontAwesomeSolid, Size=48}">
+             Icon="{FontImage &#xf527;, FontFamily={StaticResource IconFont}, Size={StaticResource IconSize}}">
             <ShellContent ContentTemplate="{DataTemplate pages:Page3}" />
         </Tab>
     </TabBar>-->

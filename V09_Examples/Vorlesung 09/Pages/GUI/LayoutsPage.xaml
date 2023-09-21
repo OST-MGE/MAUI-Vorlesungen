@@ -96,18 +96,8 @@
     </ContentPage>
 
     <ContentPage Title="Grid 2">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
+        <Grid RowDefinitions="50,Auto,*" 
+              ColumnDefinitions="*,*,*">
 
             <Label Grid.Row="0" Grid.Column="0" Background="Purple" Text="Kind 1" />
             <Label Grid.Row="1" Grid.Column="1" Background="Purple" Text="Kind 2" />

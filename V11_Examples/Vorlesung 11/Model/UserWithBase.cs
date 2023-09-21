@@ -2,9 +2,9 @@
 
 public sealed class UserWithBase : BindableBase, IUser
 {
-    private string _firstName = "Thomas";
-    private string _lastName = "Kaelin";
-    private int _age = 38;
+    private string _firstName = UserDefaults.FirstName;
+    private string _lastName = UserDefaults.LastName;
+    private int _age = UserDefaults.Age;
 
     public string FirstName
     {
