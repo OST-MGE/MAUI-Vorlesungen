@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
 		<RootNamespace>Vorlesung_09</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -48,30 +48,34 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\icon_cat.svg" />
-	  <None Remove="Resources\Images\icon_dragon.svg" />
-	  <None Remove="Resources\Images\icon_gamepad.svg" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\Images\icon_cat.svg" />
+		<None Remove="Resources\Images\icon_dragon.svg" />
+		<None Remove="Resources\Images\icon_gamepad.svg" />
 	</ItemGroup>
 	
 	<ItemGroup>
-	  <MauiXaml Update="Pages\GUI\ControlsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\GUI\FlyoutPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\GUI\LayoutsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\XAML\XamlFeatures.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\XAML\XamlVersusCSharp.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\GUI\TabbedPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+		<MauiXaml Update="Pages\GUI\ControlsPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\GUI\FlyoutPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\GUI\LayoutsPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\XAML\XamlFeatures.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\XAML\XamlVersusCSharp.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\GUI\TabbedPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 	</ItemGroup>
 
 </Project>

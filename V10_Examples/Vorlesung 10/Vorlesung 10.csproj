@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
-		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
 		<RootNamespace>Vorlesung_10</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -48,57 +48,61 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Fonts\FA6-Regular.otf" />
-	  <None Remove="Resources\Fonts\FA6-Solid.otf" />
-	  <None Remove="Resources\Fonts\Roboto-Bold.ttf" />
-	  <None Remove="Resources\Fonts\Roboto-Italic.ttf" />
-	  <None Remove="Resources\Fonts\Roboto-Regular.ttf" />
-	  <None Remove="Resources\Images\ost_logo.jpg" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\Views\FontPage.xaml.cs">
-	    <DependentUpon>FontPage.xaml</DependentUpon>
-	  </Compile>
+		<None Remove="Resources\Fonts\FA6-Regular.otf" />
+		<None Remove="Resources\Fonts\FA6-Solid.otf" />
+		<None Remove="Resources\Fonts\Roboto-Bold.ttf" />
+		<None Remove="Resources\Fonts\Roboto-Italic.ttf" />
+		<None Remove="Resources\Fonts\Roboto-Regular.ttf" />
+		<None Remove="Resources\Images\ost_logo.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\Resources\MyDictionary.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Resources\ResourcesPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Styles\StylesPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Theming\DarkTheme.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Theming\LightTheme.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Theming\ThemingPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Views\AnimationPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Views\BorderPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Views\BrushPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Views\FontPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Views\ImagePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\Views\PlatformDifferencesPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+		<Compile Update="Pages\Views\FontPage.xaml.cs">
+			<DependentUpon>FontPage.xaml</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<MauiXaml Update="Pages\Resources\MyDictionary.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\Resources\ResourcesPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\Styles\StylesPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\Theming\DarkTheme.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\Theming\LightTheme.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\Theming\ThemingPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\Views\AnimationPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\Views\BorderPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\Views\BrushPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\Views\FontPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\Views\ImagePage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Pages\Views\PlatformDifferencesPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 	</ItemGroup>
 
 </Project>
